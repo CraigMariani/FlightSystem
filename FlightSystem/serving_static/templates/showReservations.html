@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Show Reservations</title>
+    </head>
+    <body>
+        <h1>See Reservations Below!</h1>
+
+        <br>
+
+        <h3>Filter Reservations!</h3>
+        
+        <form action="" method = "POST">
+            <input type="text" placeholder="Reservation Number" name="searchNum" value="{{
+                request.form.search_Num }}">   <!--Finds the reservation that user searches for-->
+
+            <input type="checkbox" name="reservationNum"> Reservation Number
+            <input type="checkbox" name="flightNum"> Flight Number
+            <input type="checkbox" name="reservationName"> Reservation Name
+            <input type="checkbox" name="flightTimePerLeg"> Flight Time Per Leg
+            <input type="checkbox" name="totalFlightTime"> Total Flight Time
+            <input type="checkbox" name="layOverTime"> Lay Over Time
+            <br>
+            <input class="btn btn-default" type="submit" value="Submit">
+        </form>
+        <table>
+
+            {% if result %}
+            <tr>
+                <th>Reservation Number</th>
+                <th>Flight Number</th>
+                <th>Reservation Name</th>
+                <th>Flight Leg</th>
+                <th>Flight Time Per Leg</th>
+                <th>Total Flight Time</th>
+                <th>Lay Over Time</th>
+            </tr>
+
+            {% for row in result %}
+            <tr>
+                <td> {{row.reservationNum}} </td>
+                <td> {{row.flightNum}} </td>
+                <td> {{row.reservationName}} </td>
+                <td> {{row.flightLeg}} </td>
+                <td> {{row.flightTimePerLeg}} </td>
+                <td> {{row.totalFlightTime}} </td>
+                <td> {{row.layOverTime}} </td>    
+            </tr>
+
+            {% endfor %}
+            {% endif %}
+        </table>
+    </body>
+</html>

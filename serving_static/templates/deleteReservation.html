@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>Delete Reservation</title>
+    </head>
+    <body>
+        <h1>Delete Reservations Here!</h1>
+        <br>
+        <h3>Enter Reservation number below!</h3>
+
+        <form action="" method = "POST">
+                <input type="text" placeholder="Reservation Number" name="deleteNumber" value="{{
+                    request.form.deleteNumber }}">
+    
+                <input class="btn btn-default" type="submit" value="Submit">
+        </form>
+
+        <p class="message"><strong>Message:</strong> {{ message }} 
+        
+    </body>
+</html>

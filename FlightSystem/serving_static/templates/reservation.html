@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Reservation Page</title>
+    </head>
+    <body>
+       <div class="container">
+        <h1>Manage Reservations Below!</h1>
+        <br>
+        <h3>Add a Reservation</h3>
+        <form action="" method="POST">
+            <input type="text" placeholder="Reservation Name" name="reservName" value="{{
+                request.form.reservName }}">
+            <input type="text" placeholder="Flight Leg" name="flightLeg" value="{{
+                request.form.flightLeg }}">
+            <input type="text" placeholder="Flight Time Per Leg" name="flightTime" value="{{
+                request.form.flightTime }}">
+            <input type="text" placeholder="Total Flight Time" name="totalFlightTime" value="{{
+                request.form.totalFlightTime}}">
+            <input type="text" placeholder="Lay Over Time" name="layOverTime" value="{{
+                request.form.layOverTime }}">
+            
+            <input class="btn btn-default" type="submit" name="submit_button" value="Submit">
+        </form>
+        {% if error %}
+        <p class="error"><strong>Message:</strong> {{ message }}
+      {% endif %}
+       </div> 
+       <br>
+       
+    </body>
+</html>

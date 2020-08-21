@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Update Reservation Page</title>
+    </head>
+    <body>
+       
+        <h1>Update Reservations Below!</h1>
+        <br>
+        <h3>Update a Reservation</h3>
+        <br>
+        
+        
+        
+
+        <form action="" method="POST">
+            <h4>Use the Reservation Number to search</h4>
+            <br>
+            <input type="text" placeholder="Reservation Number" name="reservNumber" value="{{
+                request.form.reservNumber }}">
+            <br>
+            
+            <h4>And other Inputs to Edit Below</h4>
+            <br>
+            <input type="text" placeholder="Reservation Name" name="reservName" value="{{
+                request.form.reservName }}">
+            <input type="text" placeholder="Flight Leg" name="flightLeg" value="{{
+                request.form.flightLeg }}">
+            <input type="text" placeholder="Flight Time Per Leg" name="flightTime" value="{{
+                request.form.flightTime }}">
+            <input type="text" placeholder="Total Flight Time" name="totalFlightTime" value="{{
+                request.form.totalFlightTime }}">
+            <input type="text" placeholder="Lay Over Time" name="layOverTime" value="{{
+                request.form.layOverTime }}">
+            
+            <input class="btn btn-default" type="submit" value="Submit">
+        </form>
+        {% if error %}
+        <p class="error"><strong>Message:</strong> {{ message }}
+      {% endif %}
+  
+       <br>
+       
+    </body>
+</html>

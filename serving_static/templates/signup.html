@@ -1,0 +1,26 @@
+<body>
+        <div class="container">
+          <h1>Signup Today!</h1>
+          <form action="" method="post">
+            <input type="text" placeholder="Firstname" name="firstname" value="{{
+                request.form.firstname }}">  
+            <input type="text" placeholder="Lastname" name="lastname" value="{{
+                request.form.lastname }}">
+            <input type="text" placeholder="Username" name="username" value="{{
+              request.form.username }}">
+             <input type="password" placeholder="Password" name="password" value="{{
+              request.form.password }}">
+             
+            
+            <input class="btn btn-default" type="submit" name="submit_button"value="Signup">
+        
+          </form>
+          {% if error %}
+            <p class="error"><strong>Message:</strong> {{ message }} 
+             {{userInputName}} {{userInputPassword}} {{signupUser}} {{signupPassword}}
+          {% endif %}
+        </div>
+      </body>
+    
+      <script src="static/vendor/jquery/jquery.min.js"></script>
+      <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
